@@ -1,5 +1,4 @@
 #!/usr/bin/env python3
-
 def add(a: float, b: float) -> float:
     """
     Cette fonction prend deux nombres à virgule flottante en entrée et
