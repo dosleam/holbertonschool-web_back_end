@@ -3,13 +3,13 @@
 def add(a: float, b: float) -> float:
     """
     Cette fonction prend deux nombres à virgule flottante en entrée et
-    retourne leur somme.
+    retourne leur somme
 
     Parameters:
-    a (float): Le premier nombre à ajouter.
-    b (float): Le deuxième nombre à ajouter.
+    a (float): Le premier nombre à ajouter
+    b (float): Le deuxième nombre à ajouter
 
     Returns:
-    float: La somme des deux nombres.
+    float: La somme des deux nombres
     """
     return a + b
