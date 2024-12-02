@@ -2,7 +2,7 @@
 
 def add(a: float, b: float) -> float:
     """
-    Cette fonction prend deux nombres à virgule flottante en entrée et 
+    Cette fonction prend deux nombres à virgule flottante en entrée et
     retourne leur somme.
 
     Parameters:
@@ -11,9 +11,5 @@ def add(a: float, b: float) -> float:
 
     Returns:
     float: La somme des deux nombres.
-    
-    Exemple:
-    >>> add(1.11, 2.22)
-    3.33
     """
     return a + b
