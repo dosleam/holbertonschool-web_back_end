@@ -1,4 +1,5 @@
 #!/usr/bin/env python3
+
 """
 Module pour concaténer deux chaînes de caractères.
 """

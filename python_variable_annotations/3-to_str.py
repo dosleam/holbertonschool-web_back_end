@@ -1,4 +1,5 @@
 #!/usr/bin/env python3
+
 """
 Module pour convertir un nombre flottant en une chaîne de caractères.
 """

@@ -1,4 +1,5 @@
 #!/usr/bin/env python3
+
 """
 Module pour définir des variables avec des annotations de type.
 """

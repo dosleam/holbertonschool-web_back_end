@@ -1,10 +1,12 @@
 #!/usr/bin/env python3
+
 """
 Module pour calculer la somme des éléments d'une liste contenant des entiers et des flottants.
 """
 
 
 from typing import List, Union
+
 """
 Importation des types List et Union depuis le module typing.
 """
