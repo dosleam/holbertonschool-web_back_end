@@ -6,8 +6,8 @@ Module pour calculer le plancher d'un nombre flottant, avec l'utilisation du mod
 
 
 import math
-
-"""Module pour effectuer des opérations mathématiques, incluant le plancher
+"""
+Module pour effectuer des opérations mathématiques, incluant le plancher
 """
 
 
