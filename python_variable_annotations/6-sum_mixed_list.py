@@ -1,20 +1,19 @@
 #!/usr/bin/env python3
 
 """
-Module pour calculer la somme des éléments d'une liste contenant des entiers et des flottants.
+module 6-sum_mixed_list
 """
 
 
 from typing import List, Union
 
 """
-Importation des types List et Union depuis le module typing.
+import module typing
 """
 
 
 def sum_mixed_list(mxd_lst: List[Union[int, float]]) -> float:
     """
-    Retourne la somme des éléments de la liste, qui peuvent être des entiers ou des flottants.
+    def sum mixed list with union
     """
-
-    return float(sum(mxd_lst))
+    return sum(mxd_lst)

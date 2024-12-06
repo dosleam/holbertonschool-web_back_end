@@ -1,20 +1,19 @@
 #!/usr/bin/env python3
 
 """
-Module pour retourner une fonction qui multiplie un nombre par un facteur donné.
+module 8-make_multiplier
 """
 
 
 from typing import Callable
 
 """
-Importation du type Callable depuis le module typing.
+import typing
 """
 
 
 def make_multiplier(multiplier: float) -> Callable[[float], float]:
     """
-    Retourne une fonction qui multiplie un nombre donné par 'multiplier'.
+    def for multiplier float
     """
-
     return lambda x: x * multiplier
