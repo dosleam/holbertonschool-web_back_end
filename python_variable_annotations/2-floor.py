@@ -1,19 +1,19 @@
 #!/usr/bin/env python3
 
 """
-Module pour calculer le plancher d'un nombre flottant, avec l'utilisation du module math.
+module 2-floor
 """
 
 
 import math
 """
-Module pour effectuer des opérations mathématiques, incluant le plancher
+module for import math
 """
 
 
 def floor(n: float) -> int:
     """
-    Retourne le plancher d'un nombre flottant.
+    function return float in int
     """
 
     return math.floor(n)
