@@ -1,3 +1,9 @@
+#!/usr/bin/env python3
+"""
+Helper fonction
+"""
+
+
 def index_range(page, page_size):
     """
     Returns a tuple containing the start and end index for pagination.
