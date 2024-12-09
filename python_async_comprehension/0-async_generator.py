@@ -2,8 +2,7 @@
 
 """
 Module that contains the coroutine async_generator.
-This coroutine generates 10 random numbers between 0 and 10,
-waiting 1 second asynchronously between each generation.
+This coroutine generates random numbers asynchronously.
 """
 
 
