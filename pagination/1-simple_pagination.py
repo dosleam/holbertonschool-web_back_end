@@ -8,6 +8,26 @@ Simple pagination
 import csv
 from typing import List, Tuple
 
+"""
+Import csv avec typing
+"""
+
+
+def index_range(page, page_size) -> tuple:
+    """
+    Returns a tuple containing the start and end index for pagination.
+
+    Parameters:
+    page (int): The page number (1-indexed).
+    page_size (int): The number of items per page.
+
+    Returns:
+    tuple: A tuple containing the start index and end index.
+    """
+    start = (page - 1) * page_size
+    end = page * page_size
+    return (start, end)
+
 
 class Server:
     """
@@ -45,7 +65,8 @@ class Server:
             "Page size must be a positive integer."
         )
 
-        start = (page - 1) * page_size
-        end = page * page_size
+        start, end = index_range(page, page_size)
 
-        return self.dataset()[start:end]
+        dataset = self.dataset()
+
+        return dataset[start:end]
