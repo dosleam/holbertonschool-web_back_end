@@ -24,9 +24,9 @@ def index_range(page, page_size) -> tuple:
     Returns:
     tuple: A tuple containing the start index and end index.
     """
-    start = (page - 1) * page_size
-    end = page * page_size
-    return (start, end)
+    start_index = (page - 1) * page_size
+    end_index = page * page_size
+    return (start_index, end_index)
 
 
 class Server:
@@ -65,8 +65,8 @@ class Server:
             "Page size must be a positive integer."
         )
 
-        start, end = index_range(page, page_size)
+        start_index, end_index = index_range(page, page_size)
 
         dataset = self.dataset()
 
-        return dataset[start:end]
+        return dataset[start_index:end_index]
