@@ -54,9 +54,12 @@ class Server:
         containing a start index and an end index
         """
 
-        assert type(page) is int \
-            and type(page_size) is int
-        assert page > 0 and page_size > 0
+        assert isinstance(page, int) and page > 0, (
+            "Page must be a positive integer."
+        )
+        assert isinstance(page_size, int) and page_size > 0, (
+            "Page size must be a positive integer."
+        )
 
         start = (page - 1) * page_size
         end = page * page_size
