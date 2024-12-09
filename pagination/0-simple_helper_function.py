@@ -4,7 +4,7 @@ Helper fonction
 """
 
 
-def index_range(page, page_size):
+def index_range(page, page_size) -> tuple:
     """
     Returns a tuple containing the start and end index for pagination.
 
