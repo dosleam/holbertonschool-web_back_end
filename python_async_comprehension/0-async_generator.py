@@ -8,10 +8,10 @@ This coroutine generates random numbers asynchronously.
 
 import asyncio
 import random
-from typing import AsyncGenerator
+from typing import Generator
 
 
-async def async_generator() -> Generator[float, None]:
+async def async_generator() -> Generator[float, None, None]:
 
     """
     Coroutine that generates 10 random numbers between 0 and 10.
