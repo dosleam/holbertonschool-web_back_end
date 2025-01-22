@@ -1,23 +1,17 @@
+const http = require('http');
 const fs = require('fs').promises;
 
+// Function to read and analyze the CSV file
 async function countStudents(path) {
   try {
-    // Read the file asynchronously
     const data = await fs.readFile(path, 'utf8');
-
-    // Split the file content into lines
     const lines = data.split('\n').filter((line) => line.trim() !== '');
 
-    // If the file contains no students (empty lines or only the header)
     if (lines.length <= 1) {
-      console.log('Number of students: 0');
-      return;
+      return 'Number of students: 0';
     }
 
-    // Extract the headers (first line of the file)
     const headers = lines[0].split(',');
-
-    // Map each line of the file to a student (as an object)
     const students = lines.slice(1).map((line) => {
       const values = line.split(',');
       const student = {};
@@ -27,10 +21,7 @@ async function countStudents(path) {
       return student;
     });
 
-    // Display the total number of students
-    console.log(`Number of students: ${students.length}`);
-
-    // Create an object to group students by field
+    const totalStudents = `Number of students: ${students.length}`;
     const fields = {};
     students.forEach((student) => {
       const { field } = student;
@@ -42,14 +33,54 @@ async function countStudents(path) {
       }
     });
 
-    // Display the number of students per field and the list of their first names
+    let fieldDetails = '';
     for (const [field, names] of Object.entries(fields)) {
-      console.log(`Number of students in ${field}: ${names.length}. List: ${names.join(', ')}`);
+      fieldDetails += `\nNumber of students in ${field}: ${names.length}. List: ${names.join(', ')}`;
     }
+
+    return `${totalStudents}${fieldDetails}`;
   } catch (err) {
-    // If the file is not found or an error occurs, reject with an error message
     throw new Error('Cannot load the database');
   }
 }
 
-module.exports = countStudents;
+// Create the HTTP server
+const app = http.createServer(async (req, res) => {
+  const { url } = req;
+
+  if (url === '/') {
+    res.statusCode = 200;
+    res.setHeader('Content-Type', 'text/plain');
+    res.end('Hello Holberton School!');
+  } else if (url === '/students') {
+    res.statusCode = 200;
+    res.setHeader('Content-Type', 'text/plain');
+
+    // Read the file passed as an argument
+    const databasePath = process.argv[2];
+    if (!databasePath) {
+      res.end('This is the list of our students\nCannot load the database');
+      return;
+    }
+
+    try {
+      const studentData = await countStudents(databasePath);
+      res.end(`This is the list of our students\n${studentData}`);
+    } catch (err) {
+      res.end('This is the list of our students\nCannot load the database');
+    }
+  } else {
+    res.statusCode = 404;
+    res.setHeader('Content-Type', 'text/plain');
+    res.end('Not Found');
+  }
+});
+
+// Make the server listen on port 1245
+const PORT = 1245;
+app.listen(PORT, () => {
+  console.log(`Server is listening on port ${PORT}`);
+});
+
+// Export the server
+module.exports = app;
