@@ -1,5 +1,7 @@
+// Définition de la fonction
 function displayMessage(message) {
-    console.log(message);
-  }
+  console.log(message);
+}
 
-  module.exports = displayMessage;
+// Export de la fonction
+module.exports = displayMessage;
