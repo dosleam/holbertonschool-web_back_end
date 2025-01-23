@@ -6,7 +6,7 @@ async function countStudents(path) {
   try {
     // Read the file asynchronously
     const data = await fs.readFile(path, 'utf8');
-    
+
     // Split the file content into lines and filter out empty lines
     const lines = data.split('\n').filter((line) => line.trim() !== '');
 
